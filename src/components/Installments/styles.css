@@ -1,0 +1,10 @@
+.container {
+  float: left;
+  margin: 2px;
+  border-width: 20px;
+  border: solid black;
+}
+
+.container span {
+  display: flex;
+}
