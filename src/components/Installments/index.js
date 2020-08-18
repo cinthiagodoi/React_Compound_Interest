@@ -6,25 +6,20 @@ const Installments = (props) => {
   const { value, tax, time } = props;
   const [result, setResult] = useState([]);
 
-  const handleCount = (capitalValue) => {
-    let amountValue = (capitalValue * (1 + tax / 100)).toFixed(2);
-    return amountValue;
-  };
-
   useEffect(() => {
     let capitalValue = [];
-    let addedValue = 0;
-    let allData = [];
+    const allData = [];
 
     for (let i = 0; i < time; i++) {
-      let lastValue = capitalValue[capitalValue.length - 1];
-      addedValue = i === 0 ? value : lastValue;
-      if (tax < 0) {
-        addedValue = addedValue - (addedValue - handleCount(addedValue));
-      }
-      capitalValue.push(handleCount(addedValue));
+      let lastValue =
+        i === 0 ? Number(value) : capitalValue[capitalValue.length - 1];
+      const result = (
+        Number(lastValue) +
+        (Number(lastValue) * tax) / 100
+      ).toFixed(2);
 
-      const result = handleCount(addedValue);
+      capitalValue.push(result);
+
       const amount = (result - value).toFixed(2);
       const percentage = ((amount * 100) / value).toFixed(2);
 
