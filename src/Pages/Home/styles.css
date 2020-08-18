@@ -1,0 +1,12 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+}
+
+.container h1 {
+  text-align: center;
+  color: lightseagreen;
+  margin-top: 5%;
+  font-size: 1.6rem;
+}

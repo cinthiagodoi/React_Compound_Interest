@@ -6,7 +6,8 @@ import "./styles.css";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="container">
+      <h1>React - Juros Composto</h1>
       <Inputs />
     </div>
   );

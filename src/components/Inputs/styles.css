@@ -1,0 +1,27 @@
+#input-component fieldset {
+  border: none;
+  border-bottom: double lightseagreen;
+}
+
+#input-component .field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 5%;
+}
+
+#input-component input {
+  width: 25%;
+  height: 28px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5%;
+  border-radius: 15px;
+  border-color: lightgrey;
+  padding: 1px 1px 2px 10px;
+}
+
+#input-component input:focus {
+  outline: none;
+}

@@ -40,13 +40,17 @@ const Installments = (props) => {
   }, [props]);
 
   return (
-    <div>
+    <div className="cards">
       {result.map((value, index) => (
-        <div className="container" key={index}>
-          <p>{index}</p>
-          <p>{value.result}</p>
-          <p>{value.amount} </p>
-          <p>{value.percentage}</p>
+        <div
+          className={value.amount < 0 ? "negative-card" : "card"}
+          key={index}
+        >
+          <p className="index-position">{index + 1}</p>
+
+          <p className="value">R$ {value.result}</p>
+          <p className="amount">R$ {value.amount}</p>
+          <p className="percentage">% {value.percentage}</p>
         </div>
       ))}
     </div>

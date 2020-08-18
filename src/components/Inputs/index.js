@@ -12,48 +12,43 @@ const Inputs = () => {
     <div id="input-component">
       <fieldset>
         <div className="field">
-          <label className="field-label" htmlFor="value">
-            Capital Inicial
-          </label>
           <input
             type="number"
             name="value"
             id="valueInput"
+            min="0"
+            placeholder="Capital Inicial"
             onChange={(e) => {
               setValue(e.target.value);
             }}
           />
 
-          <label className="field-label" htmlFor="tax">
-            Taxas Juros Mensal
-          </label>
           <input
             type="number"
             name="tax"
             id="taxInput"
             min="-12"
             max="12"
+            placeholder="Taxa Juros Mensal"
             onChange={(e) => {
               setTax(e.target.value);
             }}
           />
 
-          <label className="field-label" htmlFor="time">
-            Tempo (meses)
-          </label>
           <input
             type="number"
             name="time"
             id="timeInput"
+            min="0"
+            placeholder="Tempo(meses)"
             onChange={(e) => {
               setTime(e.target.value);
             }}
           />
         </div>
       </fieldset>
-      <div className="display-results">
-        {time !== 0 && <Installments value={value} tax={tax} time={time} />}
-      </div>
+
+      {time !== 0 && <Installments value={value} tax={tax} time={time} />}
     </div>
   );
 };
